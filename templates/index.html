@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body style="background-image: url('{{ url_for('static', filename='qr_1.png') }}'); background-size: cover; background-position: center center;">
+    <!-- Header -->
+    <header>
+        <img src="qr-icon.png"  class="qr-icon">
+        QR Code Generator
+      </header>
+      
+    <!-- How to Use Section -->
+    <section class="how-to-use">
+      <h2>How to Use</h2>
+      <ol>
+          <li>Enter the text or URL in the input field.</li>
+          <li>Click on the "Generate QR Code" button.</li>
+          <li>Preview the QR code and download it.</li>
+      </ol>
+  </section>
+    <!-- Main Content -->
+    <div class="container">
+      <div class="container">
+        <form id="qr-form">
+            <label for="qr-type">Select QR Code Type:</label>
+            <select id="qr-type" name="qr-type">
+                <option value="url">URL</option>
+                <option value="email">Email</option>
+                <option value="phone">Phone</option>
+                <option value="wifi">Wi-Fi</option>
+                <option value="sms">SMS</option>
+                <option value="text">Text</option>
+            </select>
+    
+            <!-- Placeholder for dynamic fields -->
+            <div id="dynamic-fields">
+                <label for="data">Enter Text:</label>
+                <input type="text" id="data" name="data" placeholder="Type something..." required>
+            </div>
+    
+            <button type="button" id="generate-btn">Generate QR Code</button>
+        </form>
+    
+        <!-- QR Code Preview -->
+        <img id="qr-preview" src="#" alt="QR Code Preview" style="display:none;">
+    
+        <!-- Download Button -->
+        <div class="btn-container">
+            <button id="download-btn" style="display:none;">Download QR Code</button>
+        </div>
+    </div>
+    
+
+    
+
+    </div>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Features</h2>
+        <ul>
+            <li>Generate QR codes instantly.</li>
+            <li>Support for text, URLs, and more.</li>
+            <li>Preview and download QR codes.</li>
+        </ul>
+    </section>
+
+    <section id="faq-section">
+      <h2>Frequently Asked Questions</h2>
+  
+      <!-- Question 1 -->
+      <div class="faq-item">
+          <button class="faq-question">What is a QR Code?</button>
+          <div class="faq-answer">
+              <p>A QR Code is a type of matrix barcode (or two-dimensional barcode) that stores information such as a URL, text, email, etc. When scanned, the data in the QR code is displayed or used by your device.</p>
+          </div>
+      </div>
+  
+      <!-- Question 2 -->
+      <div class="faq-item">
+          <button class="faq-question">How do I generate a QR code for a Wi-Fi network?</button>
+          <div class="faq-answer">
+              <p>To generate a QR code for your Wi-Fi network, select "Wi-Fi" from the dropdown menu, then enter the SSID, password, and encryption type. The generated QR code can then be scanned by your device to automatically connect to the network.</p>
+          </div>
+      </div>
+  
+      <!-- Question 3 -->
+      <div class="faq-item">
+          <button class="faq-question">Can I generate a QR code for an email?</button>
+          <div class="faq-answer">
+              <p>Yes, you can generate a QR code for an email by selecting "Email" from the dropdown. You will need to enter the recipient's email address, a subject, and a message. When scanned, the QR code will open your email client with pre-filled information.</p>
+          </div>
+      </div>
+  
+      <!-- Question 4 -->
+      <div class="faq-item">
+          <button class="faq-question">What should I do if the QR code is not working?</button>
+          <div class="faq-answer">
+              <p>If the QR code is not working, ensure that the information entered is correct and complete. You can also try generating a new QR code. If the issue persists, check the format of the data you're entering (e.g., Wi-Fi credentials should follow the correct format).</p>
+          </div>
+      </div>
+  
+      <!-- Question 5 -->
+      <div class="faq-item">
+          <button class="faq-question">Can I use this QR Code Generator for other purposes, like business cards?</button>
+          <div class="faq-answer">
+              <p>Yes! You can use the QR Code Generator to store any text, such as business card details, social media profiles, or even your contact information. Simply choose the "Text" option, and input your data accordingly.</p>
+          </div>
+      </div>
+  
+      <!-- Question 6 -->
+      <div class="faq-item">
+          <button class="faq-question">Can I generate a QR code for a calendar event?</button>
+          <div class="faq-answer">
+              <p>Yes, QR codes can be generated for calendar events. Simply enter the event details such as date, time, and location in the text field. This is a great way to share event information quickly!</p>
+          </div>
+      </div>
+
+  
+
+  </section>
+  
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
